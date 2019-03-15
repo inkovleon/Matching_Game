@@ -51,7 +51,7 @@
                               myGame.gameScreen.setConner();
                               myGame.gameScreen.drawWindow();
 
-                              if(myGame.gScreen==='greeting'){ myGame.gameScreen.showGreeting();}
+                              if(myGame.gScreen==='greeting'){ this.showGreeting();}
                               else if (myGame.gScreen==='game'){
                                             this.showScore();
                                             showCards();
