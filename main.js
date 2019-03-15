@@ -27,7 +27,7 @@
                canvas: 0, //document.querySelector('.myCanvas'),
                ctx: 0, //canvas.getContext('2d'),
                setConner: function (){
-                              this.canvas.width = window.innerWidth; 
+                              this.canvas.width = window.innerWidth;
                               this.canvas.height = window.innerHeight;
                               //определяем координаты левого верхнего угла игрового поля
                               if (window.innerWidth>600){
@@ -50,7 +50,7 @@
                resizeW: function(){
                               myGame.gameScreen.setConner();
                               myGame.gameScreen.drawWindow();
-                              
+
                               if(myGame.gScreen==='greeting'){ myGame.gameScreen.showGreeting();}
                               else if (myGame.gScreen==='game'){
                                             this.showScore();
@@ -88,7 +88,7 @@
                               this.ctx.fillStyle = 'rgb(250, 250, 250)';
                               this.ctx.fillRect(this.leftConnerX+50, this.leftConnerY + 250, 500, 50);
                               this.ctx.textAlign= 'left';
-                              //отображаем статус    
+                              //отображаем статус
                               this.ctx.fillStyle = 'black';
                               this.ctx.font = '20px georgia';
                               if(myGame.runGame){tNow = Math.floor((window.performance.now() - myGame.tStart)/100)/10;}
@@ -121,8 +121,8 @@
 
                               if (random(0,4) < 4*myGame.gameSettings.probabilityOfMatch) {               this.right.color = this.left.text;}
                               else {this.right.color = myGame.gameSettings.Text[random(0,5)].en;}
-                              
-               }             
+
+               }
    },
    mark:{
                markDelay:400,// время в млисекундах, на которое будет появляться значек корректности ответа
@@ -130,7 +130,7 @@
                imageWrong: new Image(),
                initMark: function(){
                               this.imageCorrect.src = 'img/correct.png';
-                              this.imageWrong.src = 'img/wrong.png';                              
+                              this.imageWrong.src = 'img/wrong.png';
                },
                showMark: function(answer){
                               if(answer){myGame.gameScreen.ctx.drawImage(this.imageCorrect, myGame.gameScreen.leftConnerX+275, myGame.gameScreen.leftConnerY + 100);}
@@ -152,7 +152,7 @@
                               document.addEventListener("keyup", keyUpHandler, false);
                               this.mark.initMark();
                               this.gameScreen.setConner();
-                              this.gameScreen.drawWindow();              
+                              this.gameScreen.drawWindow();
                               this.gameScreen.showGreeting();
    },
 
@@ -165,8 +165,8 @@
                this.runGame=true;
                this.gScreen='game';
                tNow=0;
-               main(); 
-               oneStep();           
+               main();
+               oneStep();
    },
 
    endGame: function(){
@@ -238,7 +238,7 @@ function keyDownHandler(e) {
                }
     else if(e.key == "Left" || e.key == "ArrowLeft") {
 //        leftPressed = true;
-               if (myGame.cards.left.text!=myGame.cards.right.color) {processAnswer(true);} 
+               if (myGame.cards.left.text!=myGame.cards.right.color) {processAnswer(true);}
                else{processAnswer(false);}
                oneStep();
     }
